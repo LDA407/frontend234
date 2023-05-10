@@ -1,0 +1,54 @@
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './containers/Home';
+import { Er404 } from './containers/errors/er404';
+import Signup from './containers/auth/Signup';
+import Activate from './containers/auth/Activate';
+import Login from './containers/auth/Login';
+import ResetPassword from './containers/auth/ResetPassword';
+import ResetPasswordConfirm from './containers/auth/ResetPasswordConfirm';
+import Market from './containers/market';
+import ProductDetail from './containers/pages/ProductDetail';
+import SearchResults from './containers/pages/SearchResult';
+import Cart from './containers/pages/Cart';
+import Checkout from './containers/pages/Checkout';
+import ThankYou from './containers/pages/ThankYou';
+import Dashboard from './containers/pages/Dashboard';
+import DashboardPayment from './containers/pages/DashboardPayment';
+import DashboardPaymentDetail from './containers/pages/DashboardPaymentDetail';
+import store from './store';
+
+const routes = [
+  { path: '/', component: Home },
+  { path: '/cart', component: Cart },
+  { path: '/checkout', component: Checkout },
+  { path: '/signup', component: Signup },
+  { path: '/activate/:uid/:token', component: Activate },
+  { path: '/login', component: Login },
+  { path: '/reset_password', component: ResetPassword },
+  { path: '/password/reset/confirm/:uid/:token', component: ResetPasswordConfirm },
+  { path: '/market', component: Market },
+  { path: '/products/detail/:productID', component: ProductDetail },
+  { path: '/products/search', component: SearchResults },
+  { path: '/thankyou', component: ThankYou },
+  { path: '/dashboard', component: Dashboard },
+  { path: '/dashboard/payment/history', component: DashboardPayment },
+  { path: '/dashboard/payment/detail/:transaction_id', component: DashboardPaymentDetail },
+  { path: '*', component: Er404 },
+];
+
+function App() {
+  return (
+    <Provider store={store}>
+      <Router>
+        <Switch>
+          {routes.map((route, index) => (
+            <Route key={index} path={route.path} component={route.component} />
+          ))}
+        </Switch>
+      </Router>
+    </Provider>
+  );
+}
+
+export default App;

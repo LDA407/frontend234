@@ -1,0 +1,41 @@
+{
+  "status": "done",
+  "assets": {
+    "static/js/bundle.js": {
+      "name": "static/js/bundle.js",
+      "path": "C:\\Users\\LDA407\\PythonProjects\\ecommers_react\\frontend\\build\\static\\js\\bundle.js",
+      "publicPath": "/static/js/bundle.js"
+    },
+    "static/js/node_modules_web-vitals_dist_web-vitals_js.chunk.js": {
+      "name": "static/js/node_modules_web-vitals_dist_web-vitals_js.chunk.js",
+      "path": "C:\\Users\\LDA407\\PythonProjects\\ecommers_react\\frontend\\build\\static\\js\\node_modules_web-vitals_dist_web-vitals_js.chunk.js",
+      "publicPath": "/static/js/node_modules_web-vitals_dist_web-vitals_js.chunk.js"
+    },
+    "static/js/bundle.js.map": {
+      "name": "static/js/bundle.js.map",
+      "path": "C:\\Users\\LDA407\\PythonProjects\\ecommers_react\\frontend\\build\\static\\js\\bundle.js.map",
+      "publicPath": "/static/js/bundle.js.map"
+    },
+    "static/js/node_modules_web-vitals_dist_web-vitals_js.chunk.js.map": {
+      "name": "static/js/node_modules_web-vitals_dist_web-vitals_js.chunk.js.map",
+      "path": "C:\\Users\\LDA407\\PythonProjects\\ecommers_react\\frontend\\build\\static\\js\\node_modules_web-vitals_dist_web-vitals_js.chunk.js.map",
+      "publicPath": "/static/js/node_modules_web-vitals_dist_web-vitals_js.chunk.js.map"
+    },
+    "index.html": {
+      "name": "index.html",
+      "path": "C:\\Users\\LDA407\\PythonProjects\\ecommers_react\\frontend\\build\\index.html",
+      "publicPath": "/index.html"
+    },
+    "asset-manifest.json": {
+      "name": "asset-manifest.json",
+      "path": "C:\\Users\\LDA407\\PythonProjects\\ecommers_react\\frontend\\build\\asset-manifest.json",
+      "publicPath": "/asset-manifest.json"
+    }
+  },
+  "chunks": {
+    "main": [
+      "static/js/bundle.js"
+    ]
+  },
+  "publicPath": "/"
+}
