@@ -99,22 +99,22 @@ function NavBar({
   get_categories,
   categories,
 }) {
+  
   useEffect(() => {
     get_categories();
   }, []);
 
   const [redirect, setRedirect] = useState(false);
   const [render, setRender] = useState(false);
-  useEffect(() => {
-    get_categories();
-  }, []);
   const [formData, setformData] = useState({
     category_id: 0,
     search: "",
   });
+
   const onChange = (e) =>
     setformData({ ...formData, [e.target.name]: e.target.value });
   const { category_id, search } = formData;
+
   const onSubmit = (e) => {
     e.preventDefault();
     get_product_by_search(category_id, search);

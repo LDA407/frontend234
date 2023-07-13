@@ -13,6 +13,7 @@ export const get_categories = () => async (dispatch) => {
       `${process.env.REACT_APP_API_URL}/api/products/categories`,
       config
     );
+    // console.log(res.data)
     res.status === 200
       ? dispatch({
           type: GET_CATEGORIES_SUCCESS,

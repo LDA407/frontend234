@@ -115,7 +115,7 @@ const Market = ({
     price_range: "Any",
     order: "desc",
   });
-
+  console.log(categories)
   useEffect(() => {
     get_categories();
     get_products();
@@ -224,7 +224,7 @@ const Market = ({
                         categories !== null &&
                         categories !== undefined &&
                         categories.map((category) => {
-                          if (category.sub_categories.length === 0) {
+                          if (category.children.length === 0) {
                             <li key={category.id}>
                               <input
                                 onChange={(e) => handleOnChange(e)}
@@ -250,7 +250,7 @@ const Market = ({
                               </li>
                             );
 
-                            category.sub_categories.map((sub_category) => {
+                            category.children.map((sub_category) => {
                               result.push(
                                 <Fragment key={sub_category.id}>
                                   <li>
@@ -431,7 +431,7 @@ const Market = ({
                       categories !== null &&
                       categories !== undefined &&
                       categories.map((category) => {
-                        if (category.sub_categories.length === 0) {
+                        if (category.children.length === 0) {
                           <li key={category.id}>
                             <input
                               onChange={(e) => handleOnChange(e)}
@@ -456,7 +456,7 @@ const Market = ({
                               <label>{category.name}</label>
                             </li>
                           );
-                          category.sub_categories.map((sub_category) => {
+                          category.children.map((sub_category) => {
                             result.push(
                               <li key={sub_category.id}>
                                 <input

@@ -110,4 +110,16 @@ export default function Auth(state = initialState, action) {
     default:
       return state;
   }
-} 
+}
+
+function setAuthLoading(state, action) {
+  return { ...state, loading: true };
+}
+
+function removeAuthLoading(state, action) {
+  return { ...state, loading: false };
+}
+
+function userLoadedSuccess(state, action) {
+  return { ...state, user: action.payload };
+}

@@ -27,7 +27,7 @@ export const get_products = () => async (dispatch) => {
       `${process.env.REACT_APP_API_URL}/api/products/list`,
       config
     );
-    
+    console.log(res)
     res.status === 200
       ? dispatch({
           type: GET_PRODUCTS_SUCCESS,
@@ -108,6 +108,7 @@ export const get_product = (productID) => async (dispatch) => {
       `${process.env.REACT_APP_API_URL}/api/products/detail/${productID}`,
       config
     );
+    // console.log(res.data)
     (res.status === 200)?(
       dispatch({
         type: GET_PRODUCT_SUCCESS,
@@ -133,7 +134,7 @@ export const get_related_product = (productID) => async (dispatch) => {
   };
   try {
     const res = await axios.get(
-      `${process.env.REACT_APP_API_URL}/api/products/related_products/${productID}`,
+      `${process.env.REACT_APP_API_URL}/api/products/related/${productID}`,
       config
     );
     (res.status === 200 && !res.data.error)?(

@@ -32,7 +32,7 @@ export default function Products(state = initialState, action){
       case GET_PRODUCTS_SUCCESS:
         return {
           ...state,
-          products: payload.products
+          products: payload.results
         };
       case GET_PRODUCTS_FAIL:
         return {
@@ -42,7 +42,7 @@ export default function Products(state = initialState, action){
       case GET_PRODUCTS_BY_ARRIVAL_SUCCESS:
         return {
           ...state,
-          products_arrival: payload.products
+          products_arrival: payload.results
         };
       case GET_PRODUCTS_BY_ARRIVAL_FAIL:
         return {
@@ -62,7 +62,7 @@ export default function Products(state = initialState, action){
       case GET_PRODUCT_SUCCESS:
         return {
           ...state,
-          product: payload.product,
+          product: payload,
         };
       case GET_PRODUCT_FAIL:
         return {

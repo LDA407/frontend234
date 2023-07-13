@@ -40,7 +40,7 @@ export const add_item = (product) => async (dispatch) => {
     const body = JSON.stringify({ product_id });
 
     try {
-      const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/cart/add_item`, body, config );
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/shopping_cart/add_item`, body, config );
 
       if (res.status === 201) {
         dispatch({
@@ -83,10 +83,10 @@ export const get_items = () => async (dispatch) => {
         Authorization: `JWT ${localStorage.getItem("access")}`,
       },
     };
-    console.log(config);
+    
     try {
       const res = await axios.get(
-        `${process.env.REACT_APP_API_URL}/api/cart/get_items`,
+        `${process.env.REACT_APP_API_URL}/api/shopping_cart/get_items`,
         config
       );
       console.log(res);
@@ -114,7 +114,7 @@ export const get_total = () => async (dispatch) => {
     };
     try {
       const res = await axios.get(
-        `${process.env.REACT_APP_API_URL}/api/cart/get_total`,
+        `${process.env.REACT_APP_API_URL}/api/shopping_cart/get_total`,
         config
       );
       res.status === 200
@@ -165,7 +165,7 @@ export const get_items_total = () => async (dispatch) => {
     };
     try {
       const res = await axios.get(
-        `${process.env.REACT_APP_API_URL}/api/cart/get_items_total`,
+        `${process.env.REACT_APP_API_URL}/api/shopping_cart/get_items_total`,
         config
       );
       res.status === 200
@@ -210,7 +210,7 @@ export const update_item = (item, count) => async (dispatch) => {
 
     try {
       const res = await axios.put(
-        `${process.env.REACT_APP_API_URL}/api/cart/update_item`,
+        `${process.env.REACT_APP_API_URL}/api/shopping_cart/update_item`,
         config
       );
       res.status === 200 && !res.data.error
@@ -262,7 +262,7 @@ export const remove_item = (item) => async (dispatch) => {
 
     try {
       const res = await axios.delete(
-        `${process.env.REACT_APP_API_URL}/api/cart/remove_item`,
+        `${process.env.REACT_APP_API_URL}/api/shopping_cart/remove_item`,
         config
       );
       res.status === 200
@@ -312,7 +312,7 @@ export const empty_cart = () => async (dispatch) => {
 
     try {
       const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/cart/empty_cart`,
+        `${process.env.REACT_APP_API_URL}/api/shopping_cart/empty_cart`,
         config
       );
       res.status === 200
@@ -360,7 +360,7 @@ export const synch_cart = () => async (dispatch) => {
 
   try {
     const res = await axios.put(
-      `${process.env.REACT_APP_API_URL}/api/cart/synch_cart`,
+      `${process.env.REACT_APP_API_URL}/api/shopping_cart/synch_cart`,
       body, 
       config
     );

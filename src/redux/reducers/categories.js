@@ -11,9 +11,8 @@ export default function Categories(state = initialState, action){
       case GET_CATEGORIES_SUCCESS:
         return {
           ...state,
-          categories: payload.categories
+          categories: payload.results
         };
-        
       case GET_CATEGORIES_FAIL:
         return {
           ...state,
