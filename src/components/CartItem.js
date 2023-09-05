@@ -47,11 +47,11 @@ const CartItem = ({
   return (
     <li className="flex py-6 sm:py-10">
       <div className="flex-shrink-0">
-        {/* <img
-          src={item.product.imageSrc}
-          // alt={item.product.imageAlt}
+        <img
+          src={item.product.thumbnail}
+          alt={item.product.thumbnail}
           className="w-24 h-24 rounded-md object-center object-cover sm:w-48 sm:h-48"
-        /> */}
+        />
       </div>
 
       <div className="ml-4 flex-1 flex flex-col justify-between sm:ml-6">
@@ -122,7 +122,7 @@ const CartItem = ({
           </div>
         </div>
 
-        <p className="mt-4 flex text-sm text-gray-700 space-x-2">
+        {/* <p className="mt-4 flex text-sm text-gray-700 space-x-2">
           {item.product.inStock ? (
             <CheckIcon
               className="flex-shrink-0 h-5 w-5 text-green-500"
@@ -140,7 +140,7 @@ const CartItem = ({
               ? "In stock"
               : `Ships in ${item.product.leadTime}`}
           </span>
-        </p>
+        </p> */}
       </div>
     </li>
   );

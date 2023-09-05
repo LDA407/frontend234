@@ -53,9 +53,11 @@ export default function Cart(state = initialState, action) {
         items: JSON.parse(localStorage.getItem("cart")),
       };
     case GET_ITEMS_SUCCESS:
+      console.log('payload get items');
+      console.log(payload);
       return {
         ...state,
-        items: payload.cart,
+        items: payload,
       };
     case GET_ITEMS_FAIL:
       return {

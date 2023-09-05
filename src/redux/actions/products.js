@@ -24,7 +24,7 @@ export const get_products = () => async (dispatch) => {
   };
   try {
     const res = await axios.get(
-      `${process.env.REACT_APP_API_URL}/api/products/list`,
+      `${process.env.REACT_APP_API_URL}/api/products`,
       config
     );
     console.log(res)
@@ -51,7 +51,7 @@ export const get_products_by_arrival = () => async (dispatch) => {
   };
   try {
     const res = await axios.get(
-      `${process.env.REACT_APP_API_URL}/api/products/list?sortBy=date_created&order=desc&limit=3`,
+      `${process.env.REACT_APP_API_URL}/api/products/?ordering=date_created`,
       config
     );
     
@@ -78,7 +78,7 @@ export const get_products_by_sold = () => async (dispatch) => {
   };
   try {
     const res = await axios.get(
-      `${process.env.REACT_APP_API_URL}/api/products/list?sortBy=sold`,
+      `${process.env.REACT_APP_API_URL}/api/products/?ordering=sold`,
       config
     );
     

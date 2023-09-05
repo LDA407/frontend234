@@ -43,6 +43,7 @@ export const add_item = (product) => async (dispatch) => {
       const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/shopping_cart/add_item`, body, config );
 
       if (res.status === 201) {
+        console.log(res.data);
         dispatch({
           type: ADD_ITEM_SUCCESS,
           payload: res.data,
@@ -89,11 +90,11 @@ export const get_items = () => async (dispatch) => {
         `${process.env.REACT_APP_API_URL}/api/shopping_cart/get_items`,
         config
       );
-      console.log(res);
+      console.log(res.data);
       (res.status === 200)?(
         dispatch({
           type: GET_ITEMS_SUCCESS,
-          payload: res.data,
+          payload: res.data.results[0].items,
         })
       ):(
         dispatch({ type: GET_ITEMS_FAIL, })
@@ -117,6 +118,7 @@ export const get_total = () => async (dispatch) => {
         `${process.env.REACT_APP_API_URL}/api/shopping_cart/get_total`,
         config
       );
+      console.log(res.data);
       res.status === 200
         ? dispatch({
             type: GET_TOTAL_SUCCESS,
@@ -168,6 +170,7 @@ export const get_items_total = () => async (dispatch) => {
         `${process.env.REACT_APP_API_URL}/api/shopping_cart/get_items_total`,
         config
       );
+      console.log(res.data);
       res.status === 200
         ? dispatch({
             type: GET_TOTAL_ITEMS_SUCCESS,
@@ -213,6 +216,7 @@ export const update_item = (item, count) => async (dispatch) => {
         `${process.env.REACT_APP_API_URL}/api/shopping_cart/update_item`,
         config
       );
+      console.log(res.data);
       res.status === 200 && !res.data.error
         ? dispatch({
             type: UPDATE_ITEM_SUCCESS,
@@ -265,6 +269,7 @@ export const remove_item = (item) => async (dispatch) => {
         `${process.env.REACT_APP_API_URL}/api/shopping_cart/remove_item`,
         config
       );
+      console.log(res.data);
       res.status === 200
         ? dispatch({
             type: REMOVE_ITEM_SUCCESS,
@@ -315,6 +320,7 @@ export const empty_cart = () => async (dispatch) => {
         `${process.env.REACT_APP_API_URL}/api/shopping_cart/empty_cart`,
         config
       );
+      console.log(res.data);
       res.status === 200
         ? dispatch({
             type: EMPTY_CART_SUCCESS,
@@ -365,6 +371,7 @@ export const synch_cart = () => async (dispatch) => {
       config
     );
     if(res.status === 201){
+      console.log(res.data);
       dispatch({
         type: SYNCH_CART_SUCCESS,
         payload: res.data,
